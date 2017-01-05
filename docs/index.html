@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.5.2</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+  <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.5.2/boot.js"></script>
+
+  <!-- include source files here... -->
+  <script src="src/script.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="spec/spec.js"></script>
+
+</head>
+
+<body>
+  <h1><a href="http://agilekatas.co.uk/katas/romannumerals-kata">Roman Numeral Converter</a></h1>
+  <h2>Test cases:</h2>
+  <code>
+    <pre>
+      describe("converter", function() {
+        //testing basic numbers
+        it("converts 1 to I", function() {
+          expect(convert(1)).toEqual("I");
+        });
+        it("converts 5 to V", function() {
+          expect(convert(5)).toEqual("V");
+        });
+        it("converts 10 to X", function() {
+          expect(convert(10)).toEqual("X");
+        });
+        it("converts 50 to L", function() {
+          expect(convert(50)).toEqual("L");
+        });
+        it("converts 100 to C", function() {
+          expect(convert(100)).toEqual("C");
+        });
+        it("converts 500 to D", function() {
+          expect(convert(500)).toEqual("D");
+        });
+        it("converts 1000 to M", function() {
+          expect(convert(1000)).toEqual("M");
+        });
+        //provided test cases for number --> numeral
+        it("converts 3 to III", function() {
+          expect(convert(3)).toEqual("III");
+        });
+        it("converts 9 to IX", function() {
+          expect(convert(9)).toEqual("IX");
+        });
+        it("converts 1066 to MLXVI", function() {
+          expect(convert(1066)).toEqual("MLXVI");
+        });
+        it("converts 1989 to MCMLXXXIX", function() {
+          expect(convert(1989)).toEqual("MCMLXXXIX");
+        });
+        //numeral --> number
+        it("converts III to 3", function() {
+          expect(convert("III")).toEqual(3);
+        });
+        it("converts IX to 9", function() {
+          expect(convert("IX")).toEqual(9);
+        });
+        it("converts MLXVI to 1066", function() {
+          expect(convert("MLXVI")).toEqual(1066);
+        });
+        it("converts MCMLXXXIX to 1989", function() {
+          expect(convert("MCMLXXXIX")).toEqual(1989);
+        });
+      });</pre>
+  </code>
+  <h2>Tests:</h2>
+</body>
+</html>
