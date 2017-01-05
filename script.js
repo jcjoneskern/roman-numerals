@@ -3,8 +3,8 @@ module.exports = convert;
 function convert(input) {
   var arabic = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
   var roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"]; //haven't found a way to do this without exceptions for 4s and 9s
-  var numeral;
-  var number;
+  var numeral = ""; //these need defined data types, otherwise summing doesn't work
+  var number = 0;
 
   //feature 1: Arabic to Roman
   if(isNaN(input)===false) {
