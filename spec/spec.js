@@ -1,7 +1,7 @@
 var convert = require("../script.js");
 
 describe("converter", function() {
-  //these first few are kind of excessive
+  //testing basic numbers
   it("converts 1 to I", function() {
     expect(convert(1)).toEqual("I");
   });
@@ -22,5 +22,18 @@ describe("converter", function() {
   });
   it("converts 1000 to M", function() {
     expect(convert(1000)).toEqual("M");
+  });
+  //provided test cases for number --> numeral
+  it("converts 3 to III", function() {
+    expect(convert(3)).toEqual("III");
+  });
+  it("converts 9 to IX", function() {
+    expect(convert(9)).toEqual("IX");
+  });
+  it("converts 1066 to MLXVI", function() {
+    expect(convert(1066)).toEqual("MLXVI");
+  });
+  it("converts 1989 to MCMLXXXIX", function() {
+    expect(convert(1989)).toEqual("MCMLXXXIX");
   });
 });
