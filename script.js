@@ -5,26 +5,23 @@ function convert(input) {
   var roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"]; //haven't found a way to do this without exceptions for 4s and 9s
   var numeral = ""; //these need defined data types, otherwise summing doesn't work
   var number = 0;
+  var output;
 
-  //feature 1: Arabic to Roman
-  if(isNaN(input)===false) {
-    var output;
-    for(var i = 0; i < arabic.length; i++) {
-      while (input%arabic[i] < input) {
-        numeral += roman[i];
-        input -= arabic[i];
+  for(var i = 0; arabic.length; i++) {
+    if(isNaN(input)===false) {
+        while (input%arabic[i] < input && input > 0) {
+          numeral += roman[i];
+          input -= arabic[i];
+        }
+        output = numeral;
+      } else {
+        while(input.indexOf(roman[i])===0) {
+          number += arabic[i];
+          input = input.replace(roman[i],"");
+        }
+        output = number;
       }
     }
-    output = numeral;
-  } else {
-    var output;
-    for(var i = 0; i < roman.length; i++) {
-      while(input.indexOf(roman[i])===0) {
-        number += arabic[i];
-        input = input.replace(roman[i],""); //easier/more reliable than converting input to an array & using array methods on it
-      }
-    }
-    output = number;
-  }
+
   return output; //allows for flexibility in outputting either a number or a numeral
 }
