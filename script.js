@@ -17,14 +17,16 @@ function convert(input) {
     }
     output = numeral;
   }
-
   //feature 2: Roman to Arabic
   if(isNaN(input)===true) {
     var output;
-    //should be able to just reverse the above logic
+    for(var i = 0; i < roman.length; i++) {
+      while(input.indexOf(roman[i])===0) {
+        number += arabic[i];
+        input = input.replace(roman[i],""); //easier/more reliable than converting input to an array & using array methods on it
+      }
+    }
     output = number;
   }
-
-
   return output; //allows for flexibility in outputting either a number or a numeral
 }
