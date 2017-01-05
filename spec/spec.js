@@ -36,4 +36,17 @@ describe("converter", function() {
   it("converts 1989 to MCMLXXXIX", function() {
     expect(convert(1989)).toEqual("MCMLXXXIX");
   });
+  //numeral --> number
+  it("converts III to 3", function() {
+    expect(convert("III")).toEqual(3);
+  });
+  it("converts IX to 9", function() {
+    expect(convert("IX")).toEqual(9);
+  });
+  it("converts MLXVI to 1066", function() {
+    expect(convert("MLXVI")).toEqual(1066);
+  });
+  it("converts MCMLXXXIX to 1989", function() {
+    expect(convert("MCMLXXXIX")).toEqual(1989);
+  });
 });
